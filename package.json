@@ -1,6 +1,6 @@
 {
   "name": "calendar-mgmt",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Calendar Management using Pikaday Calender",
   "main": "index.js",
   "scripts": {
