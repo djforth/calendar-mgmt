@@ -24,7 +24,7 @@ module.exports = class CalendarMgmt
         that.onSelect.call(that, date)
       onDraw:()->
         d = new Date(@._y, (@._m), 1)
-        that.onSelect.call(that, d)
+        that.onDraw.call(that, d)
 
       })
 

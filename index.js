@@ -37,7 +37,7 @@ module.exports = CalendarMgmt = (function() {
       onDraw: function() {
         var d;
         d = new Date(this._y, this._m, 1);
-        return that.onSelect.call(that, d);
+        return that.onDraw.call(that, d);
       }
     });
     return this.calendar;
