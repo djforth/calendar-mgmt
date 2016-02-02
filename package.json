@@ -1,6 +1,6 @@
 {
-  "name": "calendar-mgmt",
-  "version": "0.0.1",
+  "name": "@djforth/calendar-mgmt",
+  "version": "1.0.0",
   "description": "Calendar Management using Pikaday Calender",
   "main": "index.js",
   "scripts": {
@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/djforth/calendar-mgmt.git"
+    "url": "git+https://github.com/djforth/calendar-mgmt.git"
   },
   "bugs": {
     "url": "https://github.com/djforth/calendar-mgmt/issues"
