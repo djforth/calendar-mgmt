@@ -1,4 +1,4 @@
-CalendarMgmt = require('../lib/calendar_mgmt.coffee')
+CalendarMgmt = require('../src/calendar_mgmt.coffee')
 _ = require('lodash')
 
 sinon = require('sinon')

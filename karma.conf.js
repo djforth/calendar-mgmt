@@ -1,5 +1,6 @@
 // Karma configuration
-// Generated on Sun Sep 21 2014 14:40:52 GMT+0100 (BST)
+// Generated on Mon Feb 01 2016 11:47:18 GMT+0000 (GMT)
+var coffeeify = require('coffeeify')
 
 module.exports = function(config) {
   config.set({
@@ -15,8 +16,7 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
-        '../lib/vendors.js',
-        '../spec/*.coffee'
+      'spec/*.coffee'
     ],
 
 
@@ -28,25 +28,21 @@ module.exports = function(config) {
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
-        '../spec/*.coffee': [ 'browserify' ]
+        'spec/*.coffee':['browserify']
     },
 
     browserify: {
-      debug: true,
-      transform: ['coffeeify'],
-      extensions: [ ".coffee"],
+      debug: false,
+      extensions: [ ".coffee", ".js"],
+      bundleDelay: 1000,
       configure: function(bundle) {
-        bundle.on('prebundle', function() {
-          bundle.external('pikaday');
-        });
+        bundle.transform(coffeeify)
       }
     },
-
-
     // test results reporter to use
     // possible values: 'dots', 'progress'
     // available reporters: https://npmjs.org/browse/keyword/karma-reporter
-    reporters: ['dots','progress'],
+    reporters: ['story', 'progress'],
 
 
     // web server port
@@ -68,11 +64,15 @@ module.exports = function(config) {
 
     // start these browsers
     // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
-    browsers: ['PhantomJS', 'Chrome', 'Firefox', 'Safari', 'Opera', 'IE9 - Win7', 'IE10 - Win7', 'IE11 - Win7'],
+    browsers: ['PhantomJS'],
 
 
     // Continuous Integration mode
     // if true, Karma captures browsers, runs the tests and exits
-    singleRun: false
-  });
-};
+    singleRun: false,
+
+    // Concurrency level
+    // how many browser should be started simultaneous
+    // concurrency: Infinity
+  })
+}
